@@ -25,6 +25,7 @@ export class AlbumReviewPage implements OnInit  {
   
 }
 
+  /// DEPRECATED
   /// Handler entry for New hero button click
   // btnNewHeroHandler(newHeroName: string) {
   //   this.addHero(newHeroName);

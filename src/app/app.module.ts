@@ -8,13 +8,19 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryArtistDataService } from './in-memory-artist-data.service';
 import { InMemoryAlbumReviewsDataService } from './in-memory-album-reviews-data.service';
 
-
-import { AppComponent }  from './app.component';
+// Routing
 import { AppRoutingModule } from "./app-routing.module";
 
-import { AlbumService } from "./album.service";
+// Components
+import { AppComponent }  from './app.component';
 import { AlbumReviewPage } from "./album-review-page.component";
+import { AlbumScoreComponent } from "./album-score.component";
 
+// Services
+import { AlbumService } from "./album.service";
+
+
+/// DEPRECATED
 // import { HeroDetailComponent } from './hero-detail.component';
 // import { HeroListComponent } from './hero-list.component'
 // import { HeroDashboardComponent } from './dashboard.component';
@@ -23,7 +29,7 @@ import { AlbumReviewPage } from "./album-review-page.component";
 
 @NgModule({
   imports: [ BrowserModule, FormsModule, AppRoutingModule, HttpModule, InMemoryWebApiModule.forRoot(InMemoryAlbumReviewsDataService) ],
-  declarations: [ AppComponent, AlbumReviewPage ],// HeroDetailComponent, HeroListComponent, HeroDashboardComponent, HeroSearchComponent ],
+  declarations: [ AppComponent, AlbumReviewPage, AlbumScoreComponent  ],// HeroDetailComponent, HeroListComponent, HeroDashboardComponent, HeroSearchComponent ],
   providers: [AlbumService], // [HeroService],
   bootstrap:    [ AppComponent ]
 })

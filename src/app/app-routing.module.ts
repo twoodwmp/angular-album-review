@@ -11,6 +11,8 @@ import { AlbumReviewPage } from "./album-review-page.component";
 const ROUTES: Routes = [
     { path: '', redirectTo: '/album-reviews', pathMatch: 'full' },
     { path: 'album-reviews', component: AlbumReviewPage }
+
+    /// DEPRECATED
     // { path: 'detail/:id', component: HeroDetailComponent },
     // { path: 'heroes', component: HeroListComponent },
 ];
