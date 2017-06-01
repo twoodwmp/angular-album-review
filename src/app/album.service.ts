@@ -3,9 +3,6 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-// import { Hero } from './hero';
-/// import { HEROLIST } from './mock-hero-data'; *deprecated
-
 @Injectable()
 
 export class AlbumService {

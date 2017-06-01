@@ -10,9 +10,6 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 
-// import { HeroSearchService } from "./hero-search.service";
-// import { Hero } from "./hero";
-
 import { Album } from "./album";
 import { AlbumSearchService } from "./album-search.service";
 
@@ -25,7 +22,7 @@ import { AlbumSearchService } from "./album-search.service";
 })
 
 export class AlbumSearchComponent implements OnInit {
-    heroes: Observable<Album[]>;
+    albums: Observable<Album[]>;
     private searchTerms = new Subject<string>();
     constructor(private albumSearchService: AlbumSearchService, private router: Router) {}
 
@@ -34,7 +31,7 @@ export class AlbumSearchComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.heroes = this.searchTerms
+        this.albums = this.searchTerms
             .debounceTime(300)
             .distinctUntilChanged()
             .switchMap(term => term

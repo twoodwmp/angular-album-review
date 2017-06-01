@@ -4,10 +4,6 @@ import { FormsModule }   from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { Router, RouterModule } from "@angular/router";
 
-/// DEPRECATED
-// import { Hero } from "./hero";
-// import { HeroService } from './hero.service';
-
 import { Album } from "./album";
 import { AlbumService } from "./album.service";
 

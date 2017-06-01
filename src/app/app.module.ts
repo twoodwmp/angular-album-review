@@ -23,14 +23,6 @@ import { AlbumDetailComponent } from "./album-detail.component";
 // Services
 import { AlbumService } from "./album.service";
 
-
-/// DEPRECATED
-// import { HeroDetailComponent } from './hero-detail.component';
-// import { HeroListComponent } from './hero-list.component'
-// import { HeroDashboardComponent } from './dashboard.component';
-// import { HeroSearchComponent } from './hero-search.component';
-// import { HeroService } from './hero.service';
-
 @NgModule({
   imports: [ BrowserModule, FormsModule, AppRoutingModule, HttpModule, InMemoryWebApiModule.forRoot(InMemoryAlbumReviewsDataService) ],
   declarations: [ 
@@ -40,8 +32,8 @@ import { AlbumService } from "./album.service";
     AlbumReviewGridComponent, 
     AlbumScoreComponent, 
     AlbumSearchComponent, 
-    AlbumDetailComponent  ],// HeroDetailComponent, HeroListComponent, HeroDashboardComponent, HeroSearchComponent ],
-  providers: [AlbumService], // [HeroService],
+    AlbumDetailComponent  ],
+  providers: [AlbumService],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
