@@ -26,7 +26,7 @@ export class AlbumReviewPage implements OnInit  {
   }
 
   getArtistData(): void {
-    this.albumS
+    //TODO: do we need this?
   }
   
   /// Initialization lifecycle hook
