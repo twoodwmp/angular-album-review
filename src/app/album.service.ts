@@ -17,18 +17,51 @@ export class AlbumService {
 
     constructor(private http: Http) { }
 
-    getAlbumData(): Promise<Album[]>{
-        return this.http.get(this.albumsUrl)
-            .toPromise()
-            .then(response => response.json().data as Album[])
-            .catch(this.handleError);
+    getAlbumData(): Promise<any[]> {
+        // return this.http.get(this.albumsUrl)
+        //     .toPromise()
+        //     .then(response => response.json().data as Album[])
+        //     .catch(this.handleError);
+
+        let albumPromise = this.http.get(this.albumsUrl).toPromise();
+
+        let artistPromise = this.http.get(this.artistsUrl).toPromise();
+        let albumsArray:Album[];
+        albumsArray = [];
+        return albumPromise.then(albums => {
+            let albumsResponse = albums.json().data as Album[];
+            artistPromise.then(artists => {
+                let artistsArray = artists.json().data as Artist[];
+                for (let album of albumsResponse) {
+                    var currentArtistName = artistsArray.filter(artist => artist.id === album.artist_id)[0].name;
+                    if (currentArtistName) {
+                        album["artist_name"] = currentArtistName
+                        albumsArray.push(album);
+                    }
+                    else{
+                        console.log('Artist not found')
+                    }
+                }
+            })
+            return albumsArray;
+        });
     }
 
-    getArtistData(): Promise<Artist[]>{
+    getArtistData(): Promise<Artist[]> {
         return this.http.get(this.artistsUrl)
             .toPromise()
             .then(response => response.json().data as Artist[])
             .catch(this.handleError);
+    }
+
+    identifyArtist(album: Album): Promise<Artist[]> {
+        let artistId = album.artist_id;
+
+        let albumArtist = this.getArtistData().then(artists => {
+            return artists.filter(artist => artist.id === artistId)
+        });
+
+        return albumArtist;    
     }
 
     private handleError(error: any): Promise<any> {

@@ -2,7 +2,12 @@
 <ul class="albums">
     <li *ngFor="let album of albums">
         <span>Rating: {{album.rating}}, </span>
-        <span>Artist Name: {{album.artist_id}}, </span>
+        <span>Artist ID: {{album.artist_id}}, </span>
+        <span>Artist Name: {{album.artist_name}}, </span>
         <span>Artwork: {{album.artwork}}</span>
+    </li>
+    <li *ngFor="let artist of artists">
+        <span>Name: {{artist.name}}, </span>
+        <span>ID: {{artist.id}}, </span>
     </li>
 </ul>
