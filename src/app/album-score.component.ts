@@ -14,7 +14,7 @@ import 'rxjs/add/operator/switchMap';
 
 export class AlbumScoreComponent {
     @Input() albums: Album[];
-    private displayScore: number;
+    public displayScore: number;
 
     constructor ( private albumService: AlbumService) {}
 
