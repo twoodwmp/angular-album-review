@@ -11,6 +11,15 @@ export class InMemoryAlbumReviewsDataService implements InMemoryDbService {
         {"artwork":"//rymimg.com/lk/t/l/cda63a9c33ee5990f0b2653e88490b2e/5150539.jpg","reviewed_on":"Feb 12 2014","rating":"2.5","artist_id":"Artist733382"},
         {"artwork":"//rymimg.com/lk/t/l/9ea9d2cc1dd9fd49882d5d6a5f347d7f/4980012.jpg","reviewed_on":"Jan 24 2014","rating":"3.5","artist_id":"Artist16335"}
     ];
-    return {albumReviews};
+    let artists = [
+        {"id":"Artist8076","name":"!!!"},
+        {"id":"Artist791685","name":"∆"},
+        {"id":"Artist154233","name":"120 Days"},
+        {"id":"Artist846800","name":"The 1975"},
+        {"id":"Artist724164","name":"きゃりーぱみゅぱみゅ [Kyary Pamyu Pamyu]"},
+        {"id":"Artist733382","name":"†††"},
+        {"id":"Artist16335","name":"Against Me!"}
+    ];
+    return {albumReviews, artists};
   }
 }

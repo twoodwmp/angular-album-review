@@ -5,7 +5,7 @@ import { HttpModule } from "@angular/http";
 import { RouterModule } from '@angular/router';
 
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryArtistDataService } from './in-memory-artist-data.service';
+// import { InMemoryArtistDataService } from './in-memory-artist-data.service';
 import { InMemoryAlbumReviewsDataService } from './in-memory-album-reviews-data.service';
 
 // Routing
@@ -22,6 +22,7 @@ import { AlbumDetailComponent } from "./album-detail.component";
 
 // Services
 import { AlbumService } from "./album.service";
+import { ArtistService } from "./artist.service";
 
 @NgModule({
   imports: [ BrowserModule, FormsModule, AppRoutingModule, HttpModule, InMemoryWebApiModule.forRoot(InMemoryAlbumReviewsDataService) ],
