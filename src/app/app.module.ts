@@ -5,7 +5,7 @@ import { HttpModule } from "@angular/http";
 import { RouterModule } from '@angular/router';
 
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryArtistDataService } from './in-memory-artist-data.service';
+// import { InMemoryArtistDataService } from './in-memory-artist-data.service';
 import { InMemoryAlbumReviewsDataService } from './in-memory-album-reviews-data.service';
 
 // Routing
@@ -19,6 +19,7 @@ import { AlbumScoreComponent } from "./album-score.component";
 
 // Services
 import { AlbumService } from "./album.service";
+import { ArtistService } from "./artist.service";
 
 
 /// DEPRECATED
@@ -29,9 +30,15 @@ import { AlbumService } from "./album.service";
 // import { HeroService } from './hero.service';
 
 @NgModule({
-  imports: [ BrowserModule, FormsModule, AppRoutingModule, HttpModule, InMemoryWebApiModule.forRoot(InMemoryAlbumReviewsDataService) ],
-  declarations: [ AppComponent, AlbumReviewPage, AlbumScoreComponent  ],// HeroDetailComponent, HeroListComponent, HeroDashboardComponent, HeroSearchComponent ],
-  providers: [AlbumService], // [HeroService],
+  imports: [ 
+    BrowserModule, 
+    FormsModule, 
+    AppRoutingModule, 
+    HttpModule, 
+    InMemoryWebApiModule.forRoot(InMemoryAlbumReviewsDataService)
+  ],
+  declarations: [ AppComponent, AlbumReviewPage, AlbumScoreComponent ],// HeroDetailComponent, HeroListComponent, HeroDashboardComponent, HeroSearchComponent ],
+  providers: [AlbumService, ArtistService], // [HeroService],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

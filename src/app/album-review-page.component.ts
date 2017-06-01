@@ -13,14 +13,25 @@ import { AlbumService } from "./album.service";
   templateUrl: './album-review-page.component.html',
   styleUrls: ['./album-review-page.component.css']
 })
-
-
 export class AlbumReviewPage implements OnInit  { 
 
   constructor(private albumService: AlbumService, private router: Router) { }
+
+  albums: Album[];
+
+  artists: Artist[];
+
+  getAlbumData(): void {
+    this.albumService.getAlbumData().then(albums => this.albums = albums);
+  }
+
+  getArtistData(): void {
+    this.albumS
+  }
   
   /// Initialization lifecycle hook
   ngOnInit(): void {
+    this.getAlbumData();
   }
   
 }
