@@ -26,12 +26,13 @@ export class AlbumReviewPage implements OnInit  {
   }
 
   getArtistData(): void {
-    //TODO: do we need this?
+    this.albumService.getArtistData().then(artists => this.artists = artists);
   }
   
   /// Initialization lifecycle hook
   ngOnInit(): void {
     this.getAlbumData();
+    this.getArtistData();
   }
   
 }
