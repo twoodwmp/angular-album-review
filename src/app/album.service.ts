@@ -9,7 +9,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 
 export class AlbumService {
-    private heroesURL = 'api/heroes';
+    private heroesURL = 'api/heroes'; //TODO: change API endpoint
     private headers = new Headers({'Content-Type': 'application/json'});
 
     // update(hero: Hero): Promise<Hero> {

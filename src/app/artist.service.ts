@@ -1,15 +1,54 @@
-import { InMemoryDbService } from 'angular-in-memory-web-api';
-export class InMemoryDataService implements InMemoryDbService {
-  createDb() {
-    let artists = [
-        {"id":"Artist8076","name":"!!!"},
-        {"id":"Artist791685","name":"∆"},
-        {"id":"Artist154233","name":"120 Days"},
-        {"id":"Artist846800","name":"The 1975"},
-        {"id":"Artist724164","name":"きゃりーぱみゅぱみゅ [Kyary Pamyu Pamyu]"},
-        {"id":"Artist733382","name":"†††"},
-        {"id":"Artist16335","name":"Against Me!"}
-    ];
-    return {artists};
-  }
+import { Injectable } from '@angular/core';
+import { Headers, Http } from '@angular/http';
+
+import 'rxjs/add/operator/toPromise';
+
+// import { Hero } from './hero';
+/// import { HEROLIST } from './mock-hero-data'; *deprecated
+
+@Injectable()
+
+export class Artistervice {
+    private heroesURL = 'api/heroes'; //TODO: change API endpoint
+    private headers = new Headers({'Content-Type': 'application/json'});
+
+    // update(hero: Hero): Promise<Hero> {
+    //     const url = `${this.heroesURL}/${hero.id}`;
+    //     return this.http
+    //         .put(url, JSON.stringify(hero), {headers: this.headers})
+    //         .toPromise()
+    //         .then(() => hero)
+    //         .catch(this.handleError);
+    // }
+
+    // create(name: string): Promise<Hero> {
+    //     return this.http
+    //         .post(this.heroesURL, JSON.stringify({name: name}), {headers: this.headers})
+    //         .toPromise()
+    //         .then(res => res.json().data as Hero)
+    //         .catch(this.handleError);
+    // }
+
+    // delete(id: number): Promise<Hero> {
+    //     const url = `${this.heroesURL}/${id}`;
+    //     return this.http.delete(url, {headers: this.headers})
+    //         .toPromise()
+    //         .then(hero => null)
+    //         .catch(this.handleError);
+    // }
+
+    // constructor(private http: Http) { }
+    // getHeroList(): Promise<Hero[]> {
+    //     return this.http.get(this.heroesURL).toPromise().then(response => response.json().data as Hero[]).catch(this.handleError);
+    //     ///return Promise.resolve(Heroes);
+    // }
+
+    // private handleError(error: any): Promise<any> {
+    //     console.error('An error occured', error);
+    //     return Promise.reject(error.message || error);
+    // }
+    
+    // getHero(id: number): Promise<Hero> {
+    //     return this.getHeroList().then(heroes => heroes.find(hero => hero.id === id));
+    // }
 }

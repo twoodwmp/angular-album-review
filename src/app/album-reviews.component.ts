@@ -6,3 +6,4 @@ import { Router, RouterModule } from "@angular/router";
 
 import { Album } from "./album";
 import { Artist } from "./artist";
+import { AlbumService } from "./album.service";

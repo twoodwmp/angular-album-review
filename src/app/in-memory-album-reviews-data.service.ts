@@ -1,5 +1,5 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-export class InMemoryDataService implements InMemoryDbService {
+export class InMemoryAlbumReviewsDataService implements InMemoryDbService {
   createDb() {
     let albumReviews = [
         {"artwork":"//rymimg.com/lk/t/l/d324f954ad5fe1cd73fa14a13dc3f80a/1224487.jpg","reviewed_on":"Jul 13 2011","rating":"3.5","artist_id":"Artist8076"},
