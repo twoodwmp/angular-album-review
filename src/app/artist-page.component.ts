@@ -6,18 +6,18 @@ import { Router, RouterModule } from "@angular/router";
 
 import { Album } from "./album";
 import { Artist } from "./artist";
-import { AlbumService } from "./album.service";
+import { Artistservice } from "./artist.service";
 
 @Component({
-  selector: 'album-review-page',
-  templateUrl: './album-review-page.component.html',
-  styleUrls: ['./album-review-page.component.css']
+  selector: 'artist-page',
+  templateUrl: './artist-page.component.html',
+  styleUrls: ['./artist-page.component.css']
 })
 
 
 export class ArtistPage implements OnInit  { 
 
-  constructor(private albumService: AlbumService, private router: Router) { }
+  constructor(private artistService: Artistservice, private router: Router) { }
   
   /// Initialization lifecycle hook
   ngOnInit(): void {

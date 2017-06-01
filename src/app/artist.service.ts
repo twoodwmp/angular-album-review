@@ -8,7 +8,7 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 
-export class Artistervice {
+export class Artistservice {
     private heroesURL = 'api/heroes'; //TODO: change API endpoint
     private headers = new Headers({'Content-Type': 'application/json'});
 

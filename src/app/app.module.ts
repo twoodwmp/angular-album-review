@@ -14,6 +14,7 @@ import { AppRoutingModule } from "./app-routing.module";
 // Components
 import { AppComponent }  from './app.component';
 import { AlbumReviewPage } from "./album-review-page.component";
+import { ArtistPage } from "./artist-page.component";
 import { AlbumScoreComponent } from "./album-score.component";
 
 // Services
