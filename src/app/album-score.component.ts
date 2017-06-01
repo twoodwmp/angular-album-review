@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, AfterContentInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -12,7 +12,7 @@ import 'rxjs/add/operator/switchMap';
     templateUrl: './album-score.component.html'
 })
 
-export class AlbumScoreComponent {
+export class AlbumScoreComponent implements AfterContentInit {
     @Input() albums: Album[];
     public displayScore: number;
 
@@ -21,13 +21,25 @@ export class AlbumScoreComponent {
      ngOnInit() : void {
         //  this.route.params.switchMap((params: Params) => this.heroService.getHero(+params['id']))
         //      .subscribe(hero => this.hero = hero);
-        this.updateDisplayScore();
+     }
+
+     ngOnChanges(changes: SimpleChanges) {
+         //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
+         //Add 'implements OnChanges' to the class.
+         this.updateDisplayScore();
+     }
+
+     ngAfterContentInit() {
+         //Called after ngOnInit when the component's or directive's content has been initialized.
+         //Add 'implements AfterContentInit' to the class.
+         // this.calculateDisplayScore();
      }
 
      calculateDisplayScore() :  number {
+        if (!this.albums) { return null; };
         let totalScore: number = 0;
         for (let a of this.albums) {
-            totalScore += a.rating;
+            totalScore += parseInt(a.rating);
         }
         return totalScore/this.albums.length;
      }

@@ -6,7 +6,7 @@ import { Router, RouterModule } from "@angular/router";
 
 import { Album } from "./album";
 import { Artist } from "./artist";
-import { Artistservice } from "./artist.service";
+import { ArtistService } from "./artist.service";
 
 @Component({
   selector: 'artist-page',
@@ -17,7 +17,7 @@ import { Artistservice } from "./artist.service";
 
 export class ArtistPage implements OnInit  { 
 
-  constructor(private artistService: Artistservice, private router: Router) { }
+  constructor(private artistService: ArtistService, private router: Router) { }
   
   /// Initialization lifecycle hook
   ngOnInit(): void {
